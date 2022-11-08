@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel ="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scan to Speak</title>
+</head>
+<style>
+    body {
+        background-color: #E4E9FD;
+        background-image:  -webkit-linear-gradient(145deg, #A0BCC2 50%, #E4E9FD 50%);
+        padding: 5% 15%;
+    }
+
+    label {
+        margin-bottom: 1.2%;
+    }
+</style>
+<body>
+    <h5 style="text-align: center; color: grey;">Get text converted to audio in preferred language from the uploaded image</h5><br>
+    <form action="/extracttext" method="POST"  enctype="multipart/form-data" class="form-control">
+        <label for="file" style="text-align: left;">Upload Image File - </label>
+        <input type="file" name="image" accept="image/*" required class="form-control">
+        <br>
+        <label>Select language present in image - </label>
+        <select name="langs" id="langs" required class="form-select">
+            <option value="eng">English</option>
+            <option value="tel">Telugu</option>
+            <option value="tam">Tamil</option>
+            <option value="hin">Hindi</option>
+            <option value="fra">French</option>
+        </select><br>
+        <label>Select language You want to get audio file - </label>
+        <select name="translang" id="translang" required class="form-select">
+            <option value="en">English</option>
+            <option value="ta">Tamil</option>
+            <option value="hi">Hindi</option>
+            <option value="fr">French</option>
+        </select><br>
+        <input type="submit" class="btn btn-outline-dark"></input>
+    </form>
+</body>
+</html>
